@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  go:
+    build: .
+    volumes:
+      - ./app:/app
+    working_dir: /app
+    tty: true
