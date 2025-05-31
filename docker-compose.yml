@@ -7,3 +7,16 @@ services:
       - ./app:/app
     working_dir: /app
     tty: true
+    ports:
+      - "8080:8080"
+
+  db:
+    image: mysql:8.0
+    ports:
+      - "3306:3306"
+    container_name: mysql_db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: app
+      MYSQL_USER: app
+      MYSQL_PASSWORD: app
